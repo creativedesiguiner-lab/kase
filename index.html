@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seu título aqui</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============ CORES (edite aqui) ============ */
+  :root {
+    --texto: #111111;
+    --texto-suave: #5f5a50;
+    --fundo: #ffffff;
+
+    /* Degradê amarelo */
+    --amarelo-claro: #fff3b8;
+    --amarelo: #ffd84d;
+    --ambar: #ffb627;
+    --laranja-ouro: #f59e0b;
+    --mostarda: #d9a520;
+    --creme: #fff9e0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Outfit", system-ui, sans-serif;
+    color: var(--texto);
+    background: var(--fundo);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 80px 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ============ DEGRADÊ DE FUNDO ============ */
+  .hero::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    top: 36%;
+    height: 52%;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 55% 45% at 22% 38%, var(--ambar) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 45%, var(--laranja-ouro) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 35% at 50% 62%, var(--mostarda) 0%, transparent 72%),
+      radial-gradient(ellipse 80% 45% at 50% 20%, var(--amarelo) 0%, transparent 75%),
+      radial-gradient(ellipse 90% 40% at 50% 85%, var(--amarelo-claro) 0%, transparent 80%);
+    filter: blur(48px);
+    opacity: .9;
+  }
+  /* névoa branca no topo e na base, para o degradê sumir suavemente */
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+      var(--fundo) 0%, rgba(255,255,255,0) 30%,
+      rgba(255,255,255,0) 72%, var(--fundo) 100%);
+  }
+
+  .conteudo { position: relative; z-index: 2; max-width: 780px; }
+
+  .sobretitulo {
+    font-family: "Instrument Serif", serif;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-weight: 400;
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+
+  .descricao {
+    font-weight: 300;
+    font-size: clamp(16px, 2vw, 19px);
+    line-height: 1.7;
+    color: var(--texto-suave);
+    max-width: 620px;
+    margin: 0 auto 36px;
+  }
+
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 30px;
+    border: 1px solid var(--texto);
+    border-radius: 999px;
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: rgba(255,255,255,.35);
+    transition: background .2s, color .2s;
+  }
+  .botao:hover, .botao:focus-visible { background: var(--texto); color: #fff; outline: none; }
+  .botao svg { width: 18px; height: 18px; }
+
+  /* ============ FOTO ============ */
+  .foto {
+    position: relative;
+    z-index: 1;
+    margin-top: -10px;
+    width: min(520px, 90vw);
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 640px;
+    object-fit: contain;
+    object-position: top center;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding-top: 56px; }
+    .sobretitulo { font-size: 24px; margin-bottom: 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="conteudo">
+
+    <!-- ✏️ TEXTOS: edite entre as tags -->
+    <p class="sobretitulo">Texto pequeno acima do título</p>
+
+    <h1>Título principal da sua página em duas linhas</h1>
+
+    <p class="descricao">
+      Escreva aqui uma descrição curta explicando o que você oferece, para simplificar a vida do seu cliente e destacar seus diferenciais.
+    </p>
+
+    <!-- ✏️ BOTÃO: troque o texto e o link (href) -->
+    <a class="botao" href="#">
+      Texto do botão
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <!-- 🖼️ FOTO: troque o src pelo caminho da sua imagem (ideal: PNG com fundo transparente) -->
+  <div class="foto">
+    <img
+      src="foto.png"
+      alt="Descrição da imagem"
+      onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 520%27%3E%3Crect x=%2790%27 y=%2720%27 width=%27220%27 height=%27480%27 rx=%2740%27 fill=%27%23ffffff%27 fill-opacity=%27.55%27 stroke=%27%23111%27 stroke-width=%273%27/%3E%3Ctext x=%27200%27 y=%27250%27 text-anchor=%27middle%27 font-family=%27sans-serif%27 font-size=%2718%27 fill=%27%23111%27%3ESua foto aqui%3C/text%3E%3Ctext x=%27200%27 y=%27278%27 text-anchor=%27middle%27 font-family=%27sans-serif%27 font-size=%2713%27 fill=%27%23555%27%3Efoto.png%3C/text%3E%3C/svg%3E'">
+  </div>
+</section>
+
+</body>
+</html>
