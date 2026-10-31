@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://capinhapersonalizadas.netlify.app/ -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=70d6e79e-f1c5-4af7-8547-2e33a16ebdfd
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capinhas personalizadas do seu jeito | Feita para você</title>
+<meta name="description" content="Crie sua capinha de celular personalizada com foto, nome, frase ou estampa exclusiva. Feita sob medida para o seu modelo, com proteção resistente e impressão de alta qualidade.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Capinhas personalizadas do seu jeito _ Feita para você_files/css2" rel="stylesheet">
+<style>
+  /* ============ CORES (edite aqui) ============ */
+  :root {
+    --texto: #111111;
+    --texto-suave: #5f5a50;
+    --fundo: #ffffff;
+
+    /* Degradê amarelo */
+    --amarelo-claro: #fff3b8;
+    --amarelo: #ffd84d;
+    --ambar: #ffb627;
+    --laranja-ouro: #f59e0b;
+    --mostarda: #d9a520;
+    --creme: #fff9e0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Outfit", system-ui, sans-serif;
+    color: var(--texto);
+    background: var(--fundo);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 80px 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ============ DEGRADÊ DE FUNDO ============ */
+  .hero::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    top: 36%;
+    height: 52%;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 55% 45% at 22% 38%, var(--ambar) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 45%, var(--laranja-ouro) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 35% at 50% 62%, var(--mostarda) 0%, transparent 72%),
+      radial-gradient(ellipse 80% 45% at 50% 20%, var(--amarelo) 0%, transparent 75%),
+      radial-gradient(ellipse 90% 40% at 50% 85%, var(--amarelo-claro) 0%, transparent 80%);
+    filter: blur(48px);
+    opacity: .9;
+  }
+  /* névoa branca no topo e na base, para o degradê sumir suavemente */
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+      var(--fundo) 0%, rgba(255,255,255,0) 30%,
+      rgba(255,255,255,0) 72%, var(--fundo) 100%);
+  }
+
+  .conteudo { position: relative; z-index: 2; max-width: 780px; }
+
+  /* Sobretítulo: etiqueta pequena com filetes laterais */
+  .sobretitulo {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+    margin-bottom: 30px;
+  }
+  .sobretitulo::before, .sobretitulo::after {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: currentColor;
+    opacity: .5;
+  }
+
+  /* Título: sans leve + destaque em serifa itálica */
+  h1 {
+    font-weight: 300;
+    font-size: clamp(42px, 7.4vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin-bottom: 30px;
+    text-wrap: balance;
+  }
+  h1 em {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.12em;
+    letter-spacing: -0.015em;
+  }
+  h1 .linha { display: block; }
+
+  /* Descrição: medida curta de leitura e primeira frase em destaque */
+  .descricao {
+    font-weight: 300;
+    font-size: clamp(16px, 1.9vw, 18px);
+    line-height: 1.75;
+    color: var(--texto-suave);
+    max-width: 34em;
+    margin: 0 auto 40px;
+    text-wrap: pretty;
+  }
+  .descricao strong { font-weight: 400; color: var(--texto); }
+
+  /* Passos abaixo do botão */
+  .passos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 22px;
+    margin-top: 26px;
+    list-style: none;
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--texto-suave);
+  }
+  .passos li { display: flex; align-items: center; gap: 8px; }
+  .passos span {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--texto);
+  }
+
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 30px;
+    border: 1px solid var(--texto);
+    border-radius: 999px;
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,.35);
+    transition: background .2s, color .2s;
+  }
+  .botao:hover, .botao:focus-visible { background: var(--texto); color: #fff; outline: none; }
+  .botao svg { width: 18px; height: 18px; }
+
+  /* ============ FOTO ============ */
+  .foto {
+    position: relative;
+    z-index: 1;
+    margin-top: -10px;
+    width: min(640px, 92vw);
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 680px;
+    mix-blend-mode: multiply; /* some o fundo branco da imagem sobre o degradê */
+    object-fit: contain;
+    object-position: top center;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding-top: 56px; }
+    .sobretitulo { font-size: 11px; letter-spacing: .18em; margin-bottom: 22px; }
+    .sobretitulo::before, .sobretitulo::after { width: 20px; }
+    h1 .linha { display: inline; }
+    .passos { font-size: 12px; gap: 6px 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="conteudo">
+
+    <!-- ✏️ TEXTOS: edite entre as tags -->
+    <p class="sobretitulo">Capinhas feitas para você</p>
+
+    <h1>
+      <span class="linha">Uma capinha <em>única,</em></span>
+      <span class="linha">criada do seu jeito</span>
+    </h1>
+
+    <p class="descricao">
+      <strong>Sua foto, seu nome, uma frase ou aquela arte que você ama.</strong> A gente transforma a sua ideia em uma capinha exclusiva, feita sob medida para o seu modelo de celular, com impressão de alta qualidade e proteção resistente para o dia a dia.
+    </p>
+
+    <!-- ✏️ BOTÃO: troque o texto e o link (href) -->
+    <a class="botao" href="https://capinhapersonalizadas.netlify.app/#">
+      Comprar com desconto
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+
+    <ol class="passos" aria-label="Como funciona">
+      <li><span>1</span> Escolha o modelo</li>
+      <li><span>2</span> Envie sua arte, imagem ou modelo</li>
+      <li><span>3</span> Personalizamos</li>
+      <li><span>4</span> Receba em casa</li>
+    </ol>
+  </div>
+
+  <!-- 🖼️ FOTO: para trocar, substitua "capinha-carinhas.png" (nas 4 ocorrências abaixo) pelo nome do novo arquivo -->
+  <div class="foto">
+    <img src="./Capinhas personalizadas do seu jeito _ Feita para você_files/images" srcset="/.netlify/images?url=/capinha-carinhas.png&amp;w=400 400w,
+              /.netlify/images?url=/capinha-carinhas.png&amp;w=800 800w,
+              /.netlify/images?url=/capinha-carinhas.png&amp;w=1200 1200w" sizes="(max-width: 600px) 70vw, 400px" width="2025" height="3600" alt="Capinha de celular personalizada com estampa amarela de carinhas sorridentes" onerror="this.onerror=null;this.removeAttribute('srcset');this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 520%27%3E%3Crect x=%2790%27 y=%2720%27 width=%27220%27 height=%27480%27 rx=%2740%27 fill=%27%23ffffff%27 fill-opacity=%27.55%27 stroke=%27%23111%27 stroke-width=%273%27/%3E%3Ctext x=%27200%27 y=%27250%27 text-anchor=%27middle%27 font-family=%27sans-serif%27 font-size=%2718%27 fill=%27%23111%27%3ESua foto aqui%3C/text%3E%3Ctext x=%27200%27 y=%27278%27 text-anchor=%27middle%27 font-family=%27sans-serif%27 font-size=%2713%27 fill=%27%23555%27%3Efoto.png%3C/text%3E%3C/svg%3E'">
+  </div>
+</section>
+
+
+
+<script async="" src="./Capinhas personalizadas do seu jeito _ Feita para você_files/ar" data-netlify-deploy-id="6add0f6787b3fb5dcd92e97c" data-netlify-site-id="70d6e79e-f1c5-4af7-8547-2e33a16ebdfd" data-agent-runner-id="6add05e8f0f034edd9a5b8b7"></script>
+</body></html>
